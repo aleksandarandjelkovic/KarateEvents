@@ -48,6 +48,7 @@ namespace KarateEvents.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult SaveCoach(Coach coach)
         {
             if (!ModelState.IsValid) {

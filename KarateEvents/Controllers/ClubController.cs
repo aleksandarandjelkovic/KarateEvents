@@ -31,20 +31,21 @@ namespace KarateEvents.Controllers
         {
             var vm = new AddEditClubViewModel()
             {
-                
+                Club = new Club()
             };
 
             return View("AddEditClub", vm);
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult SaveClub(Club club)
         {
             if (!ModelState.IsValid)
             {
                 var vm = new AddEditClubViewModel()
                 {
-
+                    Club = new Club()
                 };
 
                 return View("AddEditClub", vm);

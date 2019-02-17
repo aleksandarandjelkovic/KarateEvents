@@ -9,7 +9,7 @@
 
 @using (Html.BeginForm("SaveCoach", "Coach"))
 {
-
+    @Html.ValidationSummary(true, "Molimo Vas, ispravite greške")
     <div class="form-group">
         @Html.LabelFor(m => m.Coach.Name)
         @Html.TextBoxFor(m => m.Coach.Name, new { @class = "form-control" })
@@ -33,5 +33,6 @@
         @Html.DropDownListFor(m => m.Coach.ClubId, new SelectList(Model.Clubs, "Id", "Name"), "Klub", new { @class = "form-control" })
     </div>
     @Html.HiddenFor(c => c.Coach.Id)
+    @Html.AntiForgeryToken()
     <button type="submit" class="btn btn-primary">Sačuvaj</button>
 }

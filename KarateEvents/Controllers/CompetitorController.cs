@@ -47,6 +47,7 @@ namespace KarateEvents.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult SaveCompetitor(Competitor competitor)
         {
             if (!ModelState.IsValid) {
