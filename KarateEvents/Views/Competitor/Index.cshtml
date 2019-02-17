@@ -1,0 +1,29 @@
+﻿@model KarateEvents.ViewModels.CompetitorViewModel.CompetitorViewModel
+
+@{
+    ViewBag.Title = "Takmičari";
+}
+
+<h2>Lista takmičara</h2>
+
+<table id="competitors" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Ime i prezime</th>
+            <th>Uzrast</th>
+            <th>Kategorija</th>
+            <th>Pol</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var competitor in Model.Competitors)
+        {
+            <tr>
+                <td>@Html.ActionLink(competitor.Name, "EditCompetitor", "Competitor", new { id = competitor.Id }, null)</td>
+                <td>@competitor.Age</td>
+                <td>@competitor.Category</td>
+                <td>@competitor.Gender</td>
+            </tr>
+        }
+    </tbody>
+</table>

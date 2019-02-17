@@ -1,0 +1,27 @@
+﻿@model KarateEvents.ViewModels.ClubViewModels.ClubViewModel
+
+@{
+    ViewBag.Title = "Klubovi";
+}
+
+<h2>Lista klubova</h2>
+
+<table id="clubs" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Klub</th>
+            <th>Vlasnik</th>
+            <th>Telefon</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var club in Model.Clubs)
+        {
+        <tr>
+            <td>@Html.ActionLink(club.Name, "EditClub", "Club", new { id = club.Id }, null)</td>
+            <td>@club.Owner</td>
+            <td>@club.Phone</td>
+        </tr>
+        }
+    </tbody>
+</table>
