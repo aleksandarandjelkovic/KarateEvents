@@ -1,0 +1,26 @@
+﻿@model KarateEvents.ViewModels.CoachViewModel.CoachViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Lista trenera</h2>
+
+<table id="coaches" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Ime i prezime</th>
+            <th>Datum rođenja</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var coach in Model.Coaches)
+        {
+            <tr>
+                <td>@Html.ActionLink(coach.Name, "EditCoach", "Coach", new { id = coach.Id }, null)</td>
+                <td>@coach.DateOfBirth</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -2,9 +2,9 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace KarateEvents.Models.CompetitorModel
+namespace KarateEvents.Models.CoachModel
 {
-    public class Competitor
+    public class Coach
     {
         public int Id { get; set; }
         [Required]
@@ -15,16 +15,13 @@ namespace KarateEvents.Models.CompetitorModel
         [Column(TypeName = "date")]
         [Display(Name = "Datum rođenja")]
         public DateTime DateOfBirth { get; set; }
-        [Display(Name = "Uzrast")]
-        public string Age { get; set; }
-        [Display(Name = "Kategorija")]
-        public string Category { get; set; }
         [Required]
         [Display(Name = "Pol")]
         public int GenderId { get; set; }
         [Required]
+        [Display(Name = "Tip")]
+        public int CoachTypeId { get; set; }
         [Display(Name = "Klub")]
         public int ClubId { get; set; }
-
     }
 }

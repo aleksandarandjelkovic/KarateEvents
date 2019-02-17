@@ -1,0 +1,35 @@
+﻿@model KarateEvents.ViewModels.CoachViewModel.AddEditCoachViewModel
+
+@{
+    ViewBag.Title = "AddEditCoach";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Dodavanje trenera</h2>
+
+@using (Html.BeginForm("SaveCoach", "Coach"))
+{
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Coach.Name)
+        @Html.TextBoxFor(m => m.Coach.Name, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Coach.DateOfBirth)
+        @Html.TextBoxFor(m => m.Coach.DateOfBirth, "{0:d MMM yyyy}", new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Coach.CoachTypeId)
+        @Html.DropDownListFor(m => m.Coach.CoachTypeId, new SelectList(Model.Types, "Id", "CoachTypeName"), "Tip", new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Coach.GenderId)
+        @Html.DropDownListFor(m => m.Coach.GenderId, new SelectList(Model.Genders, "Id", "GenderName"), "Pol", new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Coach.ClubId)
+        @Html.DropDownListFor(m => m.Coach.ClubId, new SelectList(Model.Clubs, "Id", "Name"), "Klub", new { @class = "form-control" })
+    </div>
+    @Html.HiddenFor(c => c.Coach.Id)
+    <button type="submit" class="btn btn-primary">Sačuvaj</button>
+}

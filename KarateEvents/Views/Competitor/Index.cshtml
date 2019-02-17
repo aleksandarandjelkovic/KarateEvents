@@ -12,7 +12,6 @@
             <th>Ime i prezime</th>
             <th>Uzrast</th>
             <th>Kategorija</th>
-            <th>Pol</th>
         </tr>
     </thead>
     <tbody>
@@ -22,7 +21,6 @@
                 <td>@Html.ActionLink(competitor.Name, "EditCompetitor", "Competitor", new { id = competitor.Id }, null)</td>
                 <td>@competitor.Age</td>
                 <td>@competitor.Category</td>
-                <td>@competitor.Gender</td>
             </tr>
         }
     </tbody>

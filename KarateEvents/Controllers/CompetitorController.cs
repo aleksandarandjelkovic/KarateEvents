@@ -29,9 +29,11 @@ namespace KarateEvents.Controllers
         public ActionResult AddCompetitor()
         {
             var clubs = _dbContext.Clubs.ToList();
+            var genders = _dbContext.Genders.ToList();
             var vm = new AddEditCompetitorViewModel()
             {
-                Clubs = clubs
+                Clubs = clubs,
+                Genders = genders
             };
 
             return View("AddEditCompetitor", vm);
@@ -51,10 +53,9 @@ namespace KarateEvents.Controllers
                 competitorInDb.Age = competitor.Age;
                 competitorInDb.Category = competitor.Category;
                 competitorInDb.DateOfBirth = competitor.DateOfBirth;
-                competitorInDb.Gender = competitor.Gender;
+                competitorInDb.GenderId = competitor.GenderId;
                 competitorInDb.ClubId = competitor.ClubId;
             }
-
 
             _dbContext.SaveChanges();
 
@@ -64,6 +65,8 @@ namespace KarateEvents.Controllers
         public ActionResult EditCompetitor(int id)
         {
             var competitor = _dbContext.Competitors.SingleOrDefault(x => x.Id == id);
+            var clubs = _dbContext.Clubs.ToList();
+            var genders = _dbContext.Genders.ToList();
 
             if (competitor == null)
             {
@@ -73,7 +76,8 @@ namespace KarateEvents.Controllers
             var vm = new AddEditCompetitorViewModel
             {
                 Competitor = competitor,
-                Clubs = _dbContext.Clubs.ToList()
+                Clubs = clubs,
+                Genders = genders
             };
 
             return View("AddEditCompetitor", vm);
