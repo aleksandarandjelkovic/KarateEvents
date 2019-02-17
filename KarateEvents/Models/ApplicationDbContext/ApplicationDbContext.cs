@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity;
+using KarateEvents.Models.CategoryModel;
 using KarateEvents.Models.ClubModel;
 using KarateEvents.Models.CoachModel;
 using KarateEvents.Models.CoachTypeModel;
@@ -14,6 +15,7 @@ namespace KarateEvents.Models.ApplicationDbContext
         public DbSet<Coach> Coaches { get; set; }
         public DbSet<CoachType> CoachTypes { get; set; }
         public DbSet<Gender> Genders { get; set; }
+        public DbSet<Category> Categories { get; set; }
 
     }
 }

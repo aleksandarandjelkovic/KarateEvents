@@ -13,6 +13,7 @@
     <div class="form-group">
         @Html.LabelFor(m => m.Coach.Name)
         @Html.TextBoxFor(m => m.Coach.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Coach.Name)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Coach.DateOfBirth)
@@ -21,6 +22,7 @@
     <div class="form-group">
         @Html.LabelFor(m => m.Coach.CoachTypeId)
         @Html.DropDownListFor(m => m.Coach.CoachTypeId, new SelectList(Model.Types, "Id", "CoachTypeName"), "Tip", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Coach.CoachTypeId)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Coach.GenderId)

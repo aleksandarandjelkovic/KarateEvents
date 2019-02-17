@@ -40,6 +40,16 @@ namespace KarateEvents.Controllers
         [HttpPost]
         public ActionResult SaveClub(Club club)
         {
+            if (!ModelState.IsValid)
+            {
+                var vm = new AddEditClubViewModel()
+                {
+
+                };
+
+                return View("AddEditClub", vm);
+            }
+
             if (club.Id == 0)
             {
                 _dbContext.Clubs.Add(club);

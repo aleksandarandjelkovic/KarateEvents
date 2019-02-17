@@ -195,18 +195,30 @@
     <Compile Include="Migrations\201902171356327_AddedCoachModelValidation.Designer.cs">
       <DependentUpon>201902171356327_AddedCoachModelValidation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902171528093_AddedAgesAndCategories.cs" />
+    <Compile Include="Migrations\201902171528093_AddedAgesAndCategories.Designer.cs">
+      <DependentUpon>201902171528093_AddedAgesAndCategories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902171531225_RemovedAge.cs" />
+    <Compile Include="Migrations\201902171531225_RemovedAge.Designer.cs">
+      <DependentUpon>201902171531225_RemovedAge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902171546387_AddedCategoriesUnion.cs" />
+    <Compile Include="Migrations\201902171546387_AddedCategoriesUnion.Designer.cs">
+      <DependentUpon>201902171546387_AddedCategoriesUnion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902171558476_AddedCompetitorCategoryId.cs" />
+    <Compile Include="Migrations\201902171558476_AddedCompetitorCategoryId.Designer.cs">
+      <DependentUpon>201902171558476_AddedCompetitorCategoryId.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Age\Age.cs" />
     <Compile Include="Models\ApplicationDbContext\ApplicationDbContext.cs" />
+    <Compile Include="Models\Category\Category.cs" />
     <Compile Include="Models\Club\Club.cs" />
     <Compile Include="Models\Coach\Coach.cs" />
     <Compile Include="Models\Coach\CoachType.cs" />
     <Compile Include="Models\Competitor\Competitor.cs" />
-    <Compile Include="Models\Enums\AgeEN.cs" />
-    <Compile Include="Models\Enums\CategoryCadetEN.cs" />
-    <Compile Include="Models\Enums\CategoryJuniorEN.cs" />
-    <Compile Include="Models\Enums\CategorySeniorEN.cs" />
-    <Compile Include="Models\Enums\CategoryU21EN.cs" />
-    <Compile Include="Models\Enums\GenderEN.cs" />
     <Compile Include="Models\Gender\Gender.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\ClubViewModels\AddEditClubViewModel.cs" />
@@ -301,6 +313,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902171356327_AddedCoachModelValidation.resx">
       <DependentUpon>201902171356327_AddedCoachModelValidation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902171528093_AddedAgesAndCategories.resx">
+      <DependentUpon>201902171528093_AddedAgesAndCategories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902171531225_RemovedAge.resx">
+      <DependentUpon>201902171531225_RemovedAge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902171546387_AddedCategoriesUnion.resx">
+      <DependentUpon>201902171546387_AddedCategoriesUnion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902171558476_AddedCompetitorCategoryId.resx">
+      <DependentUpon>201902171558476_AddedCompetitorCategoryId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

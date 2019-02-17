@@ -11,16 +11,18 @@
     <thead>
         <tr>
             <th>Ime i prezime</th>
-            <th>Datum rođenja</th>
+            <th>Tip trenera</th>
+            <th>Klub</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var coach in Model.Coaches)
         {
-            <tr>
-                <td>@Html.ActionLink(coach.Name, "EditCoach", "Coach", new { id = coach.Id }, null)</td>
-                <td>@coach.DateOfBirth</td>
-            </tr>
+        <tr>
+            <td>@Html.ActionLink(coach.Name, "EditCoach", "Coach", new { id = coach.Id }, null)</td>
+            <td>@Model.CoachTypes.Where(x => x.Id == coach.CoachTypeId).Select(x => x.CoachTypeName).FirstOrDefault()</td>
+            <td>@Model.Clubs.Where(x => x.Id == coach.ClubId).Select(x => x.Name).FirstOrDefault()</td>
+        </tr>
         }
     </tbody>
 </table>

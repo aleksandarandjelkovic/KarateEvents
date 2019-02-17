@@ -17,10 +17,14 @@ namespace KarateEvents.Controllers
         public ActionResult Index()
         {
             var competitors = _dbContext.Competitors.ToList();
+            var categories = _dbContext.Categories.ToList();
+            var clubs = _dbContext.Clubs.ToList();
 
             var vm = new CompetitorViewModel()
             {
-                Competitors = competitors
+                Competitors = competitors,
+                Categories = categories,
+                Clubs = clubs
             };
 
             return View(vm);
@@ -30,10 +34,13 @@ namespace KarateEvents.Controllers
         {
             var clubs = _dbContext.Clubs.ToList();
             var genders = _dbContext.Genders.ToList();
+            var categories = _dbContext.Categories.ToList();
+
             var vm = new AddEditCompetitorViewModel()
             {
                 Clubs = clubs,
-                Genders = genders
+                Genders = genders,
+                Categories = categories
             };
 
             return View("AddEditCompetitor", vm);
@@ -42,6 +49,21 @@ namespace KarateEvents.Controllers
         [HttpPost]
         public ActionResult SaveCompetitor(Competitor competitor)
         {
+            if (!ModelState.IsValid) {
+                var clubs = _dbContext.Clubs.ToList();
+                var genders = _dbContext.Genders.ToList();
+                var categories = _dbContext.Categories.ToList();
+
+                var vm = new AddEditCompetitorViewModel()
+                {
+                    Clubs = clubs,
+                    Genders = genders,
+                    Categories = categories
+                };
+
+                return View("AddEditCompetitor", vm);
+            }
+
             if (competitor.Id == 0)
             {
                 _dbContext.Competitors.Add(competitor);
@@ -50,8 +72,7 @@ namespace KarateEvents.Controllers
             {
                 var competitorInDb = _dbContext.Competitors.Single(x => x.Id == competitor.Id);
                 competitorInDb.Name = competitor.Name;
-                competitorInDb.Age = competitor.Age;
-                competitorInDb.Category = competitor.Category;
+                competitorInDb.CategoryId = competitor.CategoryId;
                 competitorInDb.DateOfBirth = competitor.DateOfBirth;
                 competitorInDb.GenderId = competitor.GenderId;
                 competitorInDb.ClubId = competitor.ClubId;
@@ -67,6 +88,7 @@ namespace KarateEvents.Controllers
             var competitor = _dbContext.Competitors.SingleOrDefault(x => x.Id == id);
             var clubs = _dbContext.Clubs.ToList();
             var genders = _dbContext.Genders.ToList();
+            var categories = _dbContext.Categories.ToList();
 
             if (competitor == null)
             {
@@ -77,7 +99,8 @@ namespace KarateEvents.Controllers
             {
                 Competitor = competitor,
                 Clubs = clubs,
-                Genders = genders
+                Genders = genders,
+                Categories = categories
             };
 
             return View("AddEditCompetitor", vm);

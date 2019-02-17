@@ -13,30 +13,36 @@
     <div class="form-group">
         @Html.LabelFor(m => m.Club.Name)
         @Html.TextBoxFor(m => m.Club.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Club.Name)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Club.Owner)
         @Html.TextBoxFor(m => m.Club.Owner, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Club.Owner)
+
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Club.Pib)
         @Html.TextBoxFor(m => m.Club.Pib, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Club.Pib)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Club.Address)
         @Html.TextBoxFor(m => m.Club.Address, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Club.Address)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Club.City)
         @Html.TextBoxFor(m => m.Club.City, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Club.City)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Club.Phone)
         @Html.TextBoxFor(m => m.Club.Phone, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Club.Phone)
     </div>
     @Html.HiddenFor(x => x.Club.Id)
     <button type="submit" class="btn btn-primary">Sačuvaj</button>
-
 }
 
 

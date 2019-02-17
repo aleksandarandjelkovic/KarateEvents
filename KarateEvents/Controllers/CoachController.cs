@@ -18,10 +18,14 @@ namespace KarateEvents.Controllers
         public ActionResult Index()
         {
             var coaches = _dbContext.Coaches.ToList();
+            var coachTypes = _dbContext.CoachTypes.ToList();
+            var clubs = _dbContext.Clubs.ToList();
 
             var vm = new CoachViewModel()
             {
-                Coaches = coaches
+                Coaches = coaches,
+                CoachTypes = coachTypes,
+                Clubs = clubs
             };
 
             return View(vm);
@@ -46,6 +50,21 @@ namespace KarateEvents.Controllers
         [HttpPost]
         public ActionResult SaveCoach(Coach coach)
         {
+            if (!ModelState.IsValid) {
+                var clubs = _dbContext.Clubs.ToList();
+                var genders = _dbContext.Genders.ToList();
+                var types = _dbContext.CoachTypes.ToList();
+
+                var vm = new AddEditCoachViewModel()
+                {
+                    Clubs = clubs,
+                    Genders = genders,
+                    Types = types
+                };
+
+                return View("AddEditCoach", vm);
+            }
+
             if (coach.Id == 0)
             {
                 _dbContext.Coaches.Add(coach);

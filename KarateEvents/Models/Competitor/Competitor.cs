@@ -7,22 +7,24 @@ namespace KarateEvents.Models.CompetitorModel
     public class Competitor
     {
         public int Id { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Ime takmičara je obavezno")]
         [StringLength(255)]
         [Display(Name = "Ime i prezime")]
         public string Name { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "Datum rođenja takmičara je obavezan")]
         [Column(TypeName = "date")]
         [Display(Name = "Datum rođenja")]
         public DateTime DateOfBirth { get; set; }
-        [Display(Name = "Uzrast")]
-        public string Age { get; set; }
+
+        [Required(ErrorMessage = "Kategorija je obavezna")]
         [Display(Name = "Kategorija")]
-        public string Category { get; set; }
-        [Required]
+        public int CategoryId { get; set; }
+
+        [Required(ErrorMessage = "Pol takmičara je obavezan")]
         [Display(Name = "Pol")]
         public int GenderId { get; set; }
-        [Required]
+
         [Display(Name = "Klub")]
         public int ClubId { get; set; }
 

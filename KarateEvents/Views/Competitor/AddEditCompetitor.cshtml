@@ -13,22 +13,22 @@
     <div class="form-group">
         @Html.LabelFor(m => m.Competitor.Name)
         @Html.TextBoxFor(m => m.Competitor.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Competitor.Name)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Competitor.DateOfBirth)
         @Html.TextBoxFor(m => m.Competitor.DateOfBirth, "{0:d MMM yyyy}", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Competitor.DateOfBirth)
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.Competitor.Age)
-        @Html.TextBoxFor(m => m.Competitor.Age, new { @class = "form-control" })
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Competitor.Category)
-        @Html.TextBoxFor(m => m.Competitor.Category, new { @class = "form-control" })
+        @Html.LabelFor(m => m.Competitor.CategoryId)
+        @Html.DropDownListFor(m => m.Competitor.CategoryId, new SelectList(Model.Categories, "Id", "CategoryName"), "Kategorija", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Competitor.CategoryId)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Competitor.GenderId)
         @Html.DropDownListFor(m => m.Competitor.GenderId, new SelectList(Model.Genders, "Id", "GenderName"), "Pol", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Competitor.GenderId)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Competitor.ClubId)
