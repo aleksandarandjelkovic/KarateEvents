@@ -62,8 +62,6 @@ namespace KarateEvents.Controllers
                     Genders = genders,
                     Types = types
                 };
-
-                return View("AddEditCoach", vm);
             }
 
             if (coach.Id == 0)

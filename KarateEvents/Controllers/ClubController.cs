@@ -47,8 +47,6 @@ namespace KarateEvents.Controllers
                 {
                     Club = new Club()
                 };
-
-                return View("AddEditClub", vm);
             }
 
             if (club.Id == 0)

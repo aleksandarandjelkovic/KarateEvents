@@ -50,7 +50,8 @@ namespace KarateEvents.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult SaveCompetitor(Competitor competitor)
         {
-            if (!ModelState.IsValid) {
+            if (!ModelState.IsValid)
+            {
                 var clubs = _dbContext.Clubs.ToList();
                 var genders = _dbContext.Genders.ToList();
                 var categories = _dbContext.Categories.ToList();
@@ -61,8 +62,6 @@ namespace KarateEvents.Controllers
                     Genders = genders,
                     Categories = categories
                 };
-
-                return View("AddEditCompetitor", vm);
             }
 
             if (competitor.Id == 0)
