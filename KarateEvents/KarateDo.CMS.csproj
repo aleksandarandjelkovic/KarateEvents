@@ -221,12 +221,6 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext\ApplicationDbContext.cs" />
-    <Compile Include="Models\Category\Category.cs" />
-    <Compile Include="Models\Club\Club.cs" />
-    <Compile Include="Models\Coach\Coach.cs" />
-    <Compile Include="Models\Coach\CoachType.cs" />
-    <Compile Include="Models\Competitor\Competitor.cs" />
-    <Compile Include="Models\Gender\Gender.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\ClubViewModels\AddEditClubViewModel.cs" />
     <Compile Include="ViewModels\ClubViewModels\ClubViewModel.cs" />
@@ -436,6 +430,16 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KarateDo.Domain\KarateDo.Domain.csproj">
+      <Project>{d013bd43-9d9a-4fc2-ba61-b4d87705375b}</Project>
+      <Name>KarateDo.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KarateDo.Infrastructure\KarateDo.Infrastructure.csproj">
+      <Project>{3c2d0884-a6b4-4a6f-9c66-a05e0b08d499}</Project>
+      <Name>KarateDo.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

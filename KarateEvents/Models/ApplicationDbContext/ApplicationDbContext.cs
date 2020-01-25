@@ -1,10 +1,9 @@
 ﻿using System.Data.Entity;
-using KarateEvents.Models.CategoryModel;
-using KarateEvents.Models.ClubModel;
-using KarateEvents.Models.CoachModel;
-using KarateEvents.Models.CoachTypeModel;
-using KarateEvents.Models.CompetitorModel;
-using KarateEvents.Models.GenderModel;
+using KarateDo.Domain.Entities.CategoryEntities;
+using KarateDo.Domain.Entities.ClubEntities;
+using KarateDo.Domain.Entities.CoachEntities;
+using KarateDo.Domain.Entities.CompetitorEntities;
+using KarateDo.Domain.Entities.GenderEntities;
 
 namespace KarateEvents.Models.ApplicationDbContext
 {
@@ -16,6 +15,5 @@ namespace KarateEvents.Models.ApplicationDbContext
         public DbSet<CoachType> CoachTypes { get; set; }
         public DbSet<Gender> Genders { get; set; }
         public DbSet<Category> Categories { get; set; }
-
     }
 }

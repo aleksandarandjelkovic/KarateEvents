@@ -5,10 +5,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3C2D0884-A6B4-4A6F-9C66-A05E0B08D499}</ProjectGuid>
+    <ProjectGuid>{D013BD43-9D9A-4FC2-BA61-B4D87705375B}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>KarateDo.Infrastructure</RootNamespace>
-    <AssemblyName>KarateDo.Infrastructure</AssemblyName>
+    <RootNamespace>KarateDo.Domain</RootNamespace>
+    <AssemblyName>KarateDo.Domain</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -56,18 +56,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\CategoryEntities\Category.cs" />
+    <Compile Include="Entities\ClubEntities\Club.cs" />
+    <Compile Include="Entities\CoachEntities\Coach.cs" />
+    <Compile Include="Entities\CoachEntities\CoachType.cs" />
+    <Compile Include="Entities\CompetitorEntities\Competitor.cs" />
+    <Compile Include="Entities\GenderEntities\Gender.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\KarateDo.Domain\KarateDo.Domain.csproj">
-      <Project>{d013bd43-9d9a-4fc2-ba61-b4d87705375b}</Project>
-      <Name>KarateDo.Domain</Name>
-    </ProjectReference>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

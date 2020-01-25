@@ -1,6 +1,6 @@
-﻿using KarateEvents.Models.CategoryModel;
-using KarateEvents.Models.ClubModel;
-using KarateEvents.Models.CompetitorModel;
+﻿using KarateDo.Domain.Entities.CategoryEntities;
+using KarateDo.Domain.Entities.ClubEntities;
+using KarateDo.Domain.Entities.CompetitorEntities;
 using System.Collections.Generic;
 
 namespace KarateEvents.ViewModels.CompetitorViewModel

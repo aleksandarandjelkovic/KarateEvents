@@ -1,4 +1,4 @@
-﻿using KarateEvents.Models.ClubModel;
+﻿using KarateDo.Domain.Entities.ClubEntities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

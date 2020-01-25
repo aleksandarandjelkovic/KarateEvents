@@ -1,10 +1,6 @@
-﻿using KarateEvents.Models.ClubModel;
-using KarateEvents.Models.CoachModel;
-using KarateEvents.Models.CoachTypeModel;
-using System;
+﻿using KarateDo.Domain.Entities.ClubEntities;
+using KarateDo.Domain.Entities.CoachEntities;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace KarateEvents.ViewModels.CoachViewModel
 {

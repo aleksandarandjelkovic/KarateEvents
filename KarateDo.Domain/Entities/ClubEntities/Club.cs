@@ -1,8 +1,6 @@
-﻿using KarateEvents.Models.CompetitorModel;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace KarateEvents.Models.ClubModel
+namespace KarateDo.Domain.Entities.ClubEntities
 {
     public class Club
     {
