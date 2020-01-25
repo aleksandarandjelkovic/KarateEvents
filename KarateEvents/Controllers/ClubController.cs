@@ -1,5 +1,5 @@
 ﻿using KarateDo.Domain.Entities.ClubEntities;
-using KarateEvents.Models.ApplicationDbContext;
+using KarateDo.Infrastructure.ApplicationDbContext;
 using KarateEvents.ViewModels.ClubViewModels;
 using System.Linq;
 using System.Web.Mvc;

@@ -1,5 +1,5 @@
 ﻿using KarateDo.Domain.Entities.CoachEntities;
-using KarateEvents.Models.ApplicationDbContext;
+using KarateDo.Infrastructure.ApplicationDbContext;
 using KarateEvents.ViewModels.CoachViewModel;
 using System.Linq;
 using System.Web.Mvc;

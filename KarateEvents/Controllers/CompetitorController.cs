@@ -1,5 +1,5 @@
 ﻿using KarateDo.Domain.Entities.CompetitorEntities;
-using KarateEvents.Models.ApplicationDbContext;
+using KarateDo.Infrastructure.ApplicationDbContext;
 using KarateEvents.ViewModels.CompetitorViewModel;
 using System.Linq;
 using System.Web.Mvc;

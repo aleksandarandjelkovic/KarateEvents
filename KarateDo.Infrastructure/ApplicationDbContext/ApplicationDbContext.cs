@@ -1,11 +1,11 @@
-﻿using System.Data.Entity;
-using KarateDo.Domain.Entities.CategoryEntities;
+﻿using KarateDo.Domain.Entities.CategoryEntities;
 using KarateDo.Domain.Entities.ClubEntities;
 using KarateDo.Domain.Entities.CoachEntities;
 using KarateDo.Domain.Entities.CompetitorEntities;
 using KarateDo.Domain.Entities.GenderEntities;
+using System.Data.Entity;
 
-namespace KarateEvents.Models.ApplicationDbContext
+namespace KarateDo.Infrastructure.ApplicationDbContext
 {
     public class ApplicationDbContext : DbContext
     {
