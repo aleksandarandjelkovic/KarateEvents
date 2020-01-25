@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using KarateEvents.IoC;
+using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
@@ -12,6 +13,9 @@ namespace KarateEvents
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            //Ninject Dependency Resolver
+            DependencyResolver.SetResolver(new NinjectDependencyResolver());
         }
     }
 }

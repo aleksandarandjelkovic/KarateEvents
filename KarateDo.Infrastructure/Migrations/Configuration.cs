@@ -6,14 +6,14 @@ namespace KarateEvents.Migrations
 {
     using System.Data.Entity.Migrations;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<KarateDo.Infrastructure.ApplicationDbContext.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<KarateDo.Infrastructure.ApplicationDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(KarateDo.Infrastructure.ApplicationDbContext.ApplicationDbContext context)
+        protected override void Seed(KarateDo.Infrastructure.ApplicationDbContext context)
         {
             context.Categories.AddOrUpdate(x => x.Id,
                 new Category() { Id = 1, CategoryName = "Borbe -60kg" },

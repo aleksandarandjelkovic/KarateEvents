@@ -5,7 +5,7 @@ using KarateDo.Domain.Entities.CompetitorEntities;
 using KarateDo.Domain.Entities.GenderEntities;
 using System.Data.Entity;
 
-namespace KarateDo.Infrastructure.ApplicationDbContext
+namespace KarateDo.Infrastructure
 {
     public class ApplicationDbContext : DbContext
     {
