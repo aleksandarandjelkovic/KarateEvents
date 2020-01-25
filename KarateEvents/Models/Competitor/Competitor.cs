@@ -8,7 +8,7 @@ namespace KarateEvents.Models.CompetitorModel
     {
         public int Id { get; set; }
         [Required(ErrorMessage = "Ime takmičara je obavezno")]
-        [StringLength(255)]
+        [StringLength(255, MinimumLength = 5, ErrorMessage = "Najmanje 5 karaktera")]
         [Display(Name = "Ime i prezime")]
         public string Name { get; set; }
 

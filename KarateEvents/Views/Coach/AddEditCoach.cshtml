@@ -32,7 +32,11 @@
         @Html.LabelFor(m => m.Coach.ClubId)
         @Html.DropDownListFor(m => m.Coach.ClubId, new SelectList(Model.Clubs, "Id", "Name"), "Klub", new { @class = "form-control" })
     </div>
-    @Html.HiddenFor(c => c.Coach.Id)
+    if (Model.Coach != null)
+    {
+        @Html.HiddenFor(c => c.Coach.Id)
+    }
     @Html.AntiForgeryToken()
-    <button type="submit" class="btn btn-primary">Sačuvaj</button>
+    <button type="submit" class="btn btn-success">Sačuvaj</button>
+    @Html.ActionLink("Nazad", "Index", "Coach", new { @class = "btn btn-info" })
 }

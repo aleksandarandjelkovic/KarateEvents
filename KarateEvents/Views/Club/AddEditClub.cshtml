@@ -1,7 +1,7 @@
 ﻿@model KarateEvents.ViewModels.ClubViewModels.AddEditClubViewModel
 
 @{
-    ViewBag.Title = "AddClub";
+    ViewBag.Title = "AddEditClub";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -41,9 +41,13 @@
         @Html.TextBoxFor(m => m.Club.Phone, new { @class = "form-control" })
         @Html.ValidationMessageFor(m => m.Club.Phone)
     </div>
-    @Html.HiddenFor(x => x.Club.Id)
+    if (Model.Club != null)
+    {
+        @Html.HiddenFor(x => x.Club.Id)
+    }
     @Html.AntiForgeryToken()
-    <button type="submit" class="btn btn-primary">Sačuvaj</button>
+    <button type="submit" class="btn btn-success">Sačuvaj</button>
+    @Html.ActionLink("Nazad", "Index", "Club", new { @class = "btn btn-info" })
 }
 
 

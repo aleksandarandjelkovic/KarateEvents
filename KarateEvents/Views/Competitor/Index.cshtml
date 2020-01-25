@@ -6,21 +6,29 @@
 
 <h2>Lista takmičara</h2>
 
+<div id="addNewButton">
+    <button type="submit" class="btn btn-primary" onclick="location.href='@Url.Action("AddCompetitor", "Competitor")'">Dodaj novog takmicara</button>
+</div>
+
 <table id="competitors" class="table table-bordered table-hover">
     <thead>
         <tr>
             <th>Ime i prezime</th>
             <th>Klub</th>
             <th>Kategorija</th>
+            <th>Izmena</th>
+            <th>Brisanje</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var competitor in Model.Competitors)
         {
             <tr>
-                <td>@Html.ActionLink(competitor.Name, "EditCompetitor", "Competitor", new { id = competitor.Id }, null)</td>
+                <td>@competitor.Name</td>
                 <td>@Model.Clubs.Where(x => x.Id == competitor.ClubId).Select(x => x.Name).FirstOrDefault()</td>
                 <td>@Model.Categories.Where(x => x.Id == competitor.CategoryId).Select(x => x.CategoryName).FirstOrDefault()</td>
+                <td>@Html.ActionLink("Izmeni takmicara", "EditCompetitor", "Competitor", new { id = competitor.Id }, new { @class = "btn btn-warning" })</td>
+                <td>@Html.ActionLink("Obrisi takmicara", "DeleteCompetitor", "Competitor", new { id = competitor.Id }, new { @class = "btn btn-danger" })</td>
             </tr>
         }
     </tbody>

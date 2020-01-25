@@ -6,22 +6,31 @@
 
 <h2>Lista klubova</h2>
 
+<div id="addNewButton">
+    <button type="submit" class="btn btn-primary" onclick="location.href='@Url.Action("AddClub", "Club")'">Dodaj novi klub</button>
+</div>
+
 <table id="clubs" class="table table-bordered table-hover">
     <thead>
         <tr>
             <th>Klub</th>
             <th>Vlasnik</th>
             <th>Telefon</th>
+            <th>Izmena</th>
+            <th>Brisanje</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var club in Model.Clubs)
         {
-        <tr>
-            <td>@Html.ActionLink(club.Name, "EditClub", "Club", new { id = club.Id }, null)</td>
-            <td>@club.Owner</td>
-            <td>@club.Phone</td>
-        </tr>
+            @Html.Hidden(club.Id.ToString());
+            <tr>
+                <td>@club.Name</td>
+                <td>@club.Owner</td>
+                <td>@club.Phone</td>
+                <td>@Html.ActionLink("Izmeni klub", "EditClub", "Club", new { id = club.Id }, new { @class = "btn btn-warning" })</td>
+                <td>@Html.ActionLink("Obrisi klub", "DeleteClub", "Club", new { id = club.Id }, new { @class = "btn btn-danger" })</td>
+            </tr>
         }
     </tbody>
 </table>

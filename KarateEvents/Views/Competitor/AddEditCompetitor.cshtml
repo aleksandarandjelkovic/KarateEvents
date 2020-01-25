@@ -1,7 +1,7 @@
 ﻿@model KarateEvents.ViewModels.CompetitorViewModel.AddEditCompetitorViewModel
 
 @{
-    ViewBag.Title = "AddCompetitor";
+    ViewBag.Title = "AddEditCompetitor";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -34,9 +34,13 @@
         @Html.LabelFor(m => m.Competitor.ClubId)
         @Html.DropDownListFor(m => m.Competitor.ClubId, new SelectList(Model.Clubs, "Id", "Name"), "Klub", new { @class = "form-control" })
     </div>
-    @Html.HiddenFor(c => c.Competitor.Id)
+    if (Model.Competitor != null)
+    {
+        @Html.HiddenFor(c => c.Competitor.Id)
+    }
     @Html.AntiForgeryToken()
-    <button type="submit" class="btn btn-primary">Sačuvaj</button>
+    <button type="submit" class="btn btn-success">Sačuvaj</button>
+    @Html.ActionLink("Nazad", "Index", "Competitor", new { @class = "btn btn-info" })
 }
 
 

@@ -8,7 +8,7 @@ namespace KarateEvents.Models.ClubModel
     {
         public int Id { get; set; }
         [Required(ErrorMessage = "Naziv kluba je obavezan")]
-        [StringLength(50)]
+        [StringLength(50, MinimumLength = 3, ErrorMessage = "Najmanje 3 karaktera")]
         [Display(Name = "Naziv kluba")]
         public string Name { get; set; }
         [Required(ErrorMessage = "Ime vlasnika je obavezno")]

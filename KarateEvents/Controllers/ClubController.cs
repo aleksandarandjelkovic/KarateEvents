@@ -47,6 +47,8 @@ namespace KarateEvents.Controllers
                 {
                     Club = new Club()
                 };
+
+                return View("AddEditClub", vm);
             }
 
             if (club.Id == 0)
@@ -63,7 +65,6 @@ namespace KarateEvents.Controllers
                 clubInDb.Address = club.Address;
                 clubInDb.City = club.City;
             }
-
 
             _dbContext.SaveChanges();
 
@@ -85,6 +86,15 @@ namespace KarateEvents.Controllers
             };
 
             return View("AddEditClub", vm);
+        }
+
+        public ActionResult DeleteClub(int id)
+        {
+            var club = _dbContext.Clubs.Single(x => x.Id == id);
+            _dbContext.Clubs.Remove(club);
+            _dbContext.SaveChanges();
+
+            return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)

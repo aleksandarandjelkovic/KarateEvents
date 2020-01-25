@@ -62,6 +62,8 @@ namespace KarateEvents.Controllers
                     Genders = genders,
                     Types = types
                 };
+
+                return View("AddEditCoach", vm);
             }
 
             if (coach.Id == 0)
@@ -105,6 +107,16 @@ namespace KarateEvents.Controllers
 
             return View("AddEditCoach", vm);
         }
+
+        public ActionResult DeleteCoach(int id)
+        {
+            var coach = _dbContext.Coaches.Single(x => x.Id == id);
+            _dbContext.Coaches.Remove(coach);
+            _dbContext.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
         protected override void Dispose(bool disposing)
         {
             _dbContext.Dispose();

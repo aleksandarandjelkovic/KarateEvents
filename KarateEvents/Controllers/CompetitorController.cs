@@ -62,6 +62,8 @@ namespace KarateEvents.Controllers
                     Genders = genders,
                     Categories = categories
                 };
+
+                return View("AddEditCompetitor", vm);
             }
 
             if (competitor.Id == 0)
@@ -104,6 +106,15 @@ namespace KarateEvents.Controllers
             };
 
             return View("AddEditCompetitor", vm);
+        }
+
+        public ActionResult DeleteCompetitor(int id)
+        {
+            var competitor = _dbContext.Competitors.Single(x => x.Id == id);
+            _dbContext.Competitors.Remove(competitor);
+            _dbContext.SaveChanges();
+
+            return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)
