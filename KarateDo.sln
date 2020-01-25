@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KarateDo.WEB", "KarateEvent
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KarateDo.WEB.Tests", "KarateEvents.WEB.Tests\KarateDo.WEB.Tests.csproj", "{88EDD45D-EA56-424F-9756-26C8C5EC2064}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KarateDo.Infrastructure", "KarateDo.Infrastructure\KarateDo.Infrastructure.csproj", "{3C2D0884-A6B4-4A6F-9C66-A05E0B08D499}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{88EDD45D-EA56-424F-9756-26C8C5EC2064}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88EDD45D-EA56-424F-9756-26C8C5EC2064}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88EDD45D-EA56-424F-9756-26C8C5EC2064}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C2D0884-A6B4-4A6F-9C66-A05E0B08D499}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C2D0884-A6B4-4A6F-9C66-A05E0B08D499}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C2D0884-A6B4-4A6F-9C66-A05E0B08D499}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C2D0884-A6B4-4A6F-9C66-A05E0B08D499}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
