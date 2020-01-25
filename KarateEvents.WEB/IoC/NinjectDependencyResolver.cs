@@ -1,6 +1,4 @@
-﻿using KarateDo.Infrastructure.IRepositories;
-using KarateDo.Infrastructure.Repositories;
-using Ninject;
+﻿using Ninject;
 using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
@@ -10,10 +8,13 @@ namespace KarateEvents.WEB.IoC
     public class NinjectDependencyResolver : IDependencyResolver
     {
         private IKernel kernel;
+
         public NinjectDependencyResolver()
         {
             kernel = new StandardKernel();
-            AddBindings();
+
+            var ninjectBindings = new NinjectBindings();
+            ninjectBindings.Load(kernel);
         }
 
         public object GetService(Type serviceType)
@@ -24,11 +25,6 @@ namespace KarateEvents.WEB.IoC
         public IEnumerable<object> GetServices(Type serviceType)
         {
             return kernel.GetAll(serviceType);
-        }
-
-        private void AddBindings()
-        {
-            kernel.Bind<IClubRepository>().To<ClubRepository>();
         }
     }
 }
