@@ -10,8 +10,8 @@
     <ProjectGuid>{88EDD45D-EA56-424F-9756-26C8C5EC2064}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>KarateEvents.WEB.Tests</RootNamespace>
-    <AssemblyName>KarateEvents.WEB.Tests</AssemblyName>
+    <RootNamespace>KarateDo.WEB.Tests</RootNamespace>
+    <AssemblyName>KarateDo.WEB.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
