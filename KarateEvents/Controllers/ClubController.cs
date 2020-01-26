@@ -1,6 +1,6 @@
 ﻿using KarateDo.Domain.Entities.ClubEntities;
 using KarateDo.Infrastructure;
-using KarateDo.Infrastructure.IRepositories;
+using KarateDo.Infrastructure.IServices;
 using KarateEvents.ViewModels.ClubViewModels;
 using System.Linq;
 using System.Web.Mvc;
@@ -10,12 +10,12 @@ namespace KarateEvents.Controllers
     public class ClubController : Controller
     {
         private ApplicationDbContext _dbContext;
-        private readonly IClubRepository _clubRepository;
+        private readonly IClubService _clubService;
 
-        public ClubController(IClubRepository clubRepository)
+        public ClubController(IClubService clubService)
         {
             _dbContext = new ApplicationDbContext();
-            _clubRepository = clubRepository;
+            _clubService = clubService;
         }
         
         public ActionResult Index()
@@ -54,7 +54,7 @@ namespace KarateEvents.Controllers
                 return View("AddEditClub", vm);
             }
 
-            _clubRepository.SaveClub(club);
+            _clubService.SaveClub(club);
 
             return RedirectToAction("Index", "Club");
         }

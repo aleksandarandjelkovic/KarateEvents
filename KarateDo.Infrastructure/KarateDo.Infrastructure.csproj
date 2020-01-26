@@ -58,9 +58,11 @@
   <ItemGroup>
     <Compile Include="DbContext\ApplicationDbContext.cs" />
     <Compile Include="IRepositories\IClubRepository.cs" />
+    <Compile Include="IServices\IClubService.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ClubRepository.cs" />
+    <Compile Include="Services\ClubService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -72,10 +74,7 @@
       <Name>KarateDo.Domain</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="IServices\" />
-    <Folder Include="Services\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
