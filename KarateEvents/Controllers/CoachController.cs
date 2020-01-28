@@ -1,5 +1,6 @@
 ﻿using KarateDo.Domain.Entities.CoachEntities;
 using KarateDo.Infrastructure;
+using KarateDo.Infrastructure.IServices;
 using KarateEvents.ViewModels.CoachViewModel;
 using System.Linq;
 using System.Web.Mvc;
@@ -9,15 +10,17 @@ namespace KarateEvents.Controllers
     public class CoachController : Controller
     {
         private ApplicationDbContext _dbContext;
+        private readonly ICoachService _coachService;
 
-        public CoachController()
+        public CoachController(ICoachService coachService)
         {
             _dbContext = new ApplicationDbContext();
+            _coachService = coachService;
         }
         // GET: Coach
         public ActionResult Index()
         {
-            var coaches = _dbContext.Coaches.ToList();
+            var coaches = _coachService.GetAllCoaches();
             var coachTypes = _dbContext.CoachTypes.ToList();
             var clubs = _dbContext.Clubs.ToList();
 
@@ -66,28 +69,14 @@ namespace KarateEvents.Controllers
                 return View("AddEditCoach", vm);
             }
 
-            if (coach.Id == 0)
-            {
-                _dbContext.Coaches.Add(coach);
-            }
-            else
-            {
-                var coachInDb = _dbContext.Coaches.Single(x => x.Id == coach.Id);
-                coachInDb.Name = coach.Name;
-                coachInDb.DateOfBirth = coach.DateOfBirth;
-                coachInDb.CoachTypeId = coach.CoachTypeId;
-                coachInDb.GenderId = coach.GenderId;
-                coachInDb.ClubId = coach.ClubId;
-            }
-
-            _dbContext.SaveChanges();
+            _coachService.SaveCoach(coach);
 
             return RedirectToAction("Index", "Coach");
         }
 
-        public ActionResult EditCoach(int id)
+        public ActionResult EditCoach(int coachId)
         {
-            var coach = _dbContext.Coaches.SingleOrDefault(x => x.Id == id);
+            var coach = _coachService.GetCoachById(coachId);
             var clubs = _dbContext.Clubs.ToList();
             var genders = _dbContext.Genders.ToList();
             var types = _dbContext.CoachTypes.ToList();
@@ -108,11 +97,9 @@ namespace KarateEvents.Controllers
             return View("AddEditCoach", vm);
         }
 
-        public ActionResult DeleteCoach(int id)
+        public ActionResult DeleteCoach(int coachId)
         {
-            var coach = _dbContext.Coaches.Single(x => x.Id == id);
-            _dbContext.Coaches.Remove(coach);
-            _dbContext.SaveChanges();
+            _coachService.DeleteCoach(coachId);
 
             return RedirectToAction("Index");
         }

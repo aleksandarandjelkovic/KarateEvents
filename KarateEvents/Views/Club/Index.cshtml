@@ -28,8 +28,8 @@
                 <td>@club.Name</td>
                 <td>@club.Owner</td>
                 <td>@club.Phone</td>
-                <td>@Html.ActionLink("Izmeni klub", "EditClub", "Club", new { id = club.Id }, new { @class = "btn btn-warning" })</td>
-                <td>@Html.ActionLink("Obrisi klub", "DeleteClub", "Club", new { id = club.Id }, new { @class = "btn btn-danger" })</td>
+                <td>@Html.ActionLink("Izmeni klub", "EditClub", "Club", new { clubId = club.Id }, new { @class = "btn btn-warning" })</td>
+                <td>@Html.ActionLink("Obrisi klub", "DeleteClub", "Club", new { clubId = club.Id }, new { @class = "btn btn-danger" })</td>
             </tr>
         }
     </tbody>

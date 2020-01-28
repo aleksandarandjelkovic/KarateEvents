@@ -2,7 +2,6 @@
 using KarateDo.Infrastructure;
 using KarateDo.Infrastructure.IServices;
 using KarateEvents.ViewModels.ClubViewModels;
-using System.Linq;
 using System.Web.Mvc;
 
 namespace KarateEvents.Controllers
@@ -20,7 +19,7 @@ namespace KarateEvents.Controllers
         
         public ActionResult Index()
         {
-            var clubs = _dbContext.Clubs.ToList();
+            var clubs = _clubService.GetAllClubs();
 
             var vm = new ClubViewModel()
             {
@@ -59,9 +58,9 @@ namespace KarateEvents.Controllers
             return RedirectToAction("Index", "Club");
         }
 
-        public ActionResult EditClub(int id)
+        public ActionResult EditClub(int clubId)
         {
-            var club = _dbContext.Clubs.SingleOrDefault(x => x.Id == id);
+            var club = _clubService.GetClubById(clubId);
 
             if (club == null)
             {
@@ -76,11 +75,9 @@ namespace KarateEvents.Controllers
             return View("AddEditClub", vm);
         }
 
-        public ActionResult DeleteClub(int id)
+        public ActionResult DeleteClub(int clubId)
         {
-            var club = _dbContext.Clubs.Single(x => x.Id == id);
-            _dbContext.Clubs.Remove(club);
-            _dbContext.SaveChanges();
+            _clubService.DeleteClub(clubId);
 
             return RedirectToAction("Index");
         }

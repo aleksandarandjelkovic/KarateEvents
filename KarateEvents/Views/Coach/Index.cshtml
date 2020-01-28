@@ -28,8 +28,8 @@
                 <td>@coach.Name</td>
                 <td>@Model.CoachTypes.Where(x => x.Id == coach.CoachTypeId).Select(x => x.CoachTypeName).FirstOrDefault()</td>
                 <td>@Model.Clubs.Where(x => x.Id == coach.ClubId).Select(x => x.Name).FirstOrDefault()</td>
-                <td>@Html.ActionLink("Izmeni trenera", "EditCoach", "Coach", new { id = coach.Id }, new { @class = "btn btn-warning" })</td>
-                <td>@Html.ActionLink("Obrisi trenera", "DeleteCoach", "Coach", new { id = coach.Id }, new { @class = "btn btn-danger" })</td>
+                <td>@Html.ActionLink("Izmeni trenera", "EditCoach", "Coach", new { coachId = coach.Id }, new { @class = "btn btn-warning" })</td>
+                <td>@Html.ActionLink("Obrisi trenera", "DeleteCoach", "Coach", new { coachId = coach.Id }, new { @class = "btn btn-danger" })</td>
             </tr>
         }
     </tbody>

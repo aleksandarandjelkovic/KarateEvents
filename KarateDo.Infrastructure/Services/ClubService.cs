@@ -1,6 +1,7 @@
 ﻿using KarateDo.Domain.Entities.ClubEntities;
 using KarateDo.Infrastructure.IRepositories;
 using KarateDo.Infrastructure.IServices;
+using System.Collections.Generic;
 
 namespace KarateDo.Infrastructure.Services
 {
@@ -13,9 +14,24 @@ namespace KarateDo.Infrastructure.Services
             _clubRepository = clubRepository;
         }
 
+        public List<Club> GetAllClubs()
+        {
+            return _clubRepository.GetAllClubs();
+        }
+
+        public Club GetClubById(int clubId)
+        {
+            return _clubRepository.GetClubById(clubId);
+        }
+
         public void SaveClub(Club club)
         {
             _clubRepository.SaveClub(club);
+        }
+
+        public void DeleteClub(int clubId)
+        {
+            _clubRepository.DeleteClub(clubId);
         }
     }
 }

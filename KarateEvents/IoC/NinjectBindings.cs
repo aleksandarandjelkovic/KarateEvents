@@ -12,9 +12,13 @@ namespace KarateEvents.IoC
         {
             //Services
             kernel.Bind<IClubService>().To<ClubService>();
+            kernel.Bind<ICoachService>().To<CoachService>();
+
 
             //Repositories
             kernel.Bind<IClubRepository>().To<ClubRepository>();
+            kernel.Bind<ICoachRepository>().To<CoachRepository>();
+
         }
     }
 }
