@@ -24,7 +24,7 @@ namespace KarateEvents.Controllers
             var coachTypes = _dbContext.CoachTypes.ToList();
             var clubs = _dbContext.Clubs.ToList();
 
-            var vm = new CoachViewModel()
+            var vm = new CoachesListViewModel()
             {
                 Coaches = coaches,
                 CoachTypes = coachTypes,
@@ -51,6 +51,7 @@ namespace KarateEvents.Controllers
         }
 
         [HttpPost]
+        [ValidateInput(true)]
         [ValidateAntiForgeryToken]
         public ActionResult SaveCoach(Coach coach)
         {
@@ -88,7 +89,6 @@ namespace KarateEvents.Controllers
 
             var vm = new AddEditCoachViewModel
             {
-                Coach = coach,
                 Clubs = clubs,
                 Genders = genders,
                 Types = types

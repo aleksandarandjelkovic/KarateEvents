@@ -20,7 +20,7 @@ namespace KarateEvents.Controllers
             var categories = _dbContext.Categories.ToList();
             var clubs = _dbContext.Clubs.ToList();
 
-            var vm = new CompetitorViewModel()
+            var vm = new CompetitorsListViewModel()
             {
                 Competitors = competitors,
                 Categories = categories,
@@ -47,6 +47,7 @@ namespace KarateEvents.Controllers
         }
 
         [HttpPost]
+        [ValidateInput(true)]
         [ValidateAntiForgeryToken]
         public ActionResult SaveCompetitor(Competitor competitor)
         {
@@ -99,7 +100,6 @@ namespace KarateEvents.Controllers
 
             var vm = new AddEditCompetitorViewModel
             {
-                Competitor = competitor,
                 Clubs = clubs,
                 Genders = genders,
                 Categories = categories

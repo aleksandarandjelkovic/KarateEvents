@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace KarateEvents.ViewModels.CoachViewModel
 {
-    public class CoachViewModel
+    public class CoachesListViewModel
     {
         public List<Coach> Coaches { get; set; }
         public List<CoachType> CoachTypes { get; set; }

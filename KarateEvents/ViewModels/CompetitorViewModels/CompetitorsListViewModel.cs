@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace KarateEvents.ViewModels.CompetitorViewModel
 {
-    public class CompetitorViewModel
+    public class CompetitorsListViewModel
     {
         public List<Competitor> Competitors { get; set; }
         public List<Category> Categories { get; set; }

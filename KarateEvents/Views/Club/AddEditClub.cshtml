@@ -7,46 +7,45 @@
 
 <h2>Dodavanje kluba</h2>
 
-@using (Html.BeginForm("SaveClub", "Club"))
+@using (Html.BeginForm("SaveClub", "Club", FormMethod.Post))
 {
     @Html.ValidationSummary(true, "Molimo Vas, ispravite greške")
     <div class="form-group">
-        @Html.LabelFor(m => m.Club.Name)
-        @Html.TextBoxFor(m => m.Club.Name, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Club.Name)
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Name)
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.Club.Owner)
-        @Html.TextBoxFor(m => m.Club.Owner, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Club.Owner)
+        @Html.LabelFor(m => m.Owner)
+        @Html.TextBoxFor(m => m.Owner, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Owner)
 
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.Club.Pib)
-        @Html.TextBoxFor(m => m.Club.Pib, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Club.Pib)
+        @Html.LabelFor(m => m.Pib)
+        @Html.TextBoxFor(m => m.Pib, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Pib)
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.Club.Address)
-        @Html.TextBoxFor(m => m.Club.Address, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Club.Address)
+        @Html.LabelFor(m => m.Address)
+        @Html.TextBoxFor(m => m.Address, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Address)
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.Club.City)
-        @Html.TextBoxFor(m => m.Club.City, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Club.City)
+        @Html.LabelFor(m => m.City)
+        @Html.TextBoxFor(m => m.City, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.City)
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.Club.Phone)
-        @Html.TextBoxFor(m => m.Club.Phone, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Club.Phone)
+        @Html.LabelFor(m => m.Phone)
+        @Html.TextBoxFor(m => m.Phone, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Phone)
     </div>
-    if (Model.Club != null)
-    {
-        @Html.HiddenFor(x => x.Club.Id)
-    }
+
+    @Html.HiddenFor(x => x.Id)
+
     @Html.AntiForgeryToken()
-    <button type="submit" class="btn btn-success">Sačuvaj</button>
+    <input name="save" type="submit" value="Sačuvaj" class="btn btn-success" />
     @Html.ActionLink("Nazad", "Index", "Club", new { @class = "btn btn-info" })
 }
 

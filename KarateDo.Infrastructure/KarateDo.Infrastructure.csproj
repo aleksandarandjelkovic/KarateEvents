@@ -61,6 +61,22 @@
     <Compile Include="IRepositories\ICoachRepository.cs" />
     <Compile Include="IServices\IClubService.cs" />
     <Compile Include="IServices\ICoachService.cs" />
+    <Compile Include="Migrations\202002160949135_addedDateCreatedAndUpdated.cs" />
+    <Compile Include="Migrations\202002160949135_addedDateCreatedAndUpdated.designer.cs">
+      <DependentUpon>202002160949135_addedDateCreatedAndUpdated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002161134364_ClubModelRemovedDataAnnotations.cs" />
+    <Compile Include="Migrations\202002161134364_ClubModelRemovedDataAnnotations.designer.cs">
+      <DependentUpon>202002161134364_ClubModelRemovedDataAnnotations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002161142206_CoachModelRemovedDataAnnotations.cs" />
+    <Compile Include="Migrations\202002161142206_CoachModelRemovedDataAnnotations.designer.cs">
+      <DependentUpon>202002161142206_CoachModelRemovedDataAnnotations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002161151340_CompetitorModelRemovedDataAnnotations.cs" />
+    <Compile Include="Migrations\202002161151340_CompetitorModelRemovedDataAnnotations.designer.cs">
+      <DependentUpon>202002161151340_CompetitorModelRemovedDataAnnotations.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ClubRepository.cs" />
@@ -78,7 +94,20 @@
       <Name>KarateDo.Domain</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202002160949135_addedDateCreatedAndUpdated.resx">
+      <DependentUpon>202002160949135_addedDateCreatedAndUpdated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002161134364_ClubModelRemovedDataAnnotations.resx">
+      <DependentUpon>202002161134364_ClubModelRemovedDataAnnotations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002161142206_CoachModelRemovedDataAnnotations.resx">
+      <DependentUpon>202002161142206_CoachModelRemovedDataAnnotations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002161151340_CompetitorModelRemovedDataAnnotations.resx">
+      <DependentUpon>202002161151340_CompetitorModelRemovedDataAnnotations.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

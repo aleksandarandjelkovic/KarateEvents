@@ -125,7 +125,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\KarateEvents\KarateDo.CMS.csproj">
-      <Project>{F558331C-53A0-4D9F-9163-15216F5861F9}</Project>
+      <Project>{f558331c-53a0-4d9f-9163-15216f5861f9}</Project>
       <Name>KarateDo.CMS</Name>
     </ProjectReference>
   </ItemGroup>

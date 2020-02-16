@@ -1,5 +1,4 @@
-﻿using KarateDo.Domain.Entities.ClubEntities;
-using KarateDo.Infrastructure;
+﻿using KarateDo.Infrastructure;
 using KarateDo.Infrastructure.IServices;
 using KarateEvents.ViewModels.ClubViewModels;
 using System.Web.Mvc;
@@ -21,7 +20,7 @@ namespace KarateEvents.Controllers
         {
             var clubs = _clubService.GetAllClubs();
 
-            var vm = new ClubViewModel()
+            var vm = new ClubsListViewModel()
             {
                 Clubs = clubs
             };
@@ -31,31 +30,25 @@ namespace KarateEvents.Controllers
 
         public ActionResult AddClub()
         {
-            var vm = new AddEditClubViewModel()
-            {
-                Club = new Club()
-            };
+            var vm = new AddEditClubViewModel();
 
             return View("AddEditClub", vm);
         }
 
         [HttpPost]
+        [ValidateInput(true)]
         [ValidateAntiForgeryToken]
-        public ActionResult SaveClub(Club club)
+        public ActionResult SaveClub(AddEditClubViewModel clubViewModel)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                var vm = new AddEditClubViewModel()
-                {
-                    Club = new Club()
-                };
+                //_clubService.SaveClub(club);
 
-                return View("AddEditClub", vm);
+                return RedirectToAction("Index", "Club");
             }
 
-            _clubService.SaveClub(club);
-
-            return RedirectToAction("Index", "Club");
+            var vm = new AddEditClubViewModel();
+            return View("AddEditClub", vm);
         }
 
         public ActionResult EditClub(int clubId)
@@ -67,10 +60,7 @@ namespace KarateEvents.Controllers
                 return HttpNotFound();
             }
 
-            var vm = new AddEditClubViewModel
-            {
-                Club = club,
-            };
+            var vm = new AddEditClubViewModel();
 
             return View("AddEditClub", vm);
         }

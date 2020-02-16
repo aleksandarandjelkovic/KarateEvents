@@ -7,36 +7,35 @@
 
 <h2>Dodavanje trenera</h2>
 
-@using (Html.BeginForm("SaveCoach", "Coach"))
+@using (Html.BeginForm("SaveCoach", "Coach", FormMethod.Post))
 {
     @Html.ValidationSummary(true, "Molimo Vas, ispravite greške")
     <div class="form-group">
-        @Html.LabelFor(m => m.Coach.Name)
-        @Html.TextBoxFor(m => m.Coach.Name, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Coach.Name)
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Name)
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.Coach.DateOfBirth)
-        @Html.TextBoxFor(m => m.Coach.DateOfBirth, "{0:d MMM yyyy}", new { @class = "form-control" })
+        @Html.LabelFor(m => m.DateOfBirth)
+        @Html.TextBoxFor(m => m.DateOfBirth, "{0:d MMM yyyy}", new { @class = "form-control" })
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.Coach.CoachTypeId)
-        @Html.DropDownListFor(m => m.Coach.CoachTypeId, new SelectList(Model.Types, "Id", "CoachTypeName"), "Tip", new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Coach.CoachTypeId)
+        @Html.LabelFor(m => m.CoachTypeId)
+        @Html.DropDownListFor(m => m.CoachTypeId, new SelectList(Model.Types, "Id", "CoachTypeName"), "Tip", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.CoachTypeId)
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.Coach.GenderId)
-        @Html.DropDownListFor(m => m.Coach.GenderId, new SelectList(Model.Genders, "Id", "GenderName"), "Pol", new { @class = "form-control" })
+        @Html.LabelFor(m => m.GenderId)
+        @Html.DropDownListFor(m => m.GenderId, new SelectList(Model.Genders, "Id", "GenderName"), "Pol", new { @class = "form-control" })
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.Coach.ClubId)
-        @Html.DropDownListFor(m => m.Coach.ClubId, new SelectList(Model.Clubs, "Id", "Name"), "Klub", new { @class = "form-control" })
+        @Html.LabelFor(m => m.ClubId)
+        @Html.DropDownListFor(m => m.ClubId, new SelectList(Model.Clubs, "Id", "Name"), "Klub", new { @class = "form-control" })
     </div>
-    if (Model.Coach != null)
-    {
-        @Html.HiddenFor(c => c.Coach.Id)
-    }
+
+    @Html.HiddenFor(c => c.Id)
+
     @Html.AntiForgeryToken()
-    <button type="submit" class="btn btn-success">Sačuvaj</button>
+    <input name="save" type="submit" value="Sačuvaj" class="btn btn-success" />
     @Html.ActionLink("Nazad", "Index", "Coach", new { @class = "btn btn-info" })
 }

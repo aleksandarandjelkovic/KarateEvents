@@ -57,9 +57,6 @@
     <Reference Include="KarateDo.Domain">
       <HintPath>..\KarateDo.Domain\bin\Debug\KarateDo.Domain.dll</HintPath>
     </Reference>
-    <Reference Include="KarateDo.Infrastructure">
-      <HintPath>..\KarateDo.Infrastructure\bin\Debug\KarateDo.Infrastructure.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
@@ -335,6 +332,12 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KarateDo.Infrastructure\KarateDo.Infrastructure.csproj">
+      <Project>{3c2d0884-a6b4-4a6f-9c66-a05e0b08d499}</Project>
+      <Name>KarateDo.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
