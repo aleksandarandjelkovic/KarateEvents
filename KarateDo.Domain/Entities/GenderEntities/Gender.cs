@@ -1,8 +1,7 @@
 ﻿namespace KarateDo.Domain.Entities.GenderEntities
 {
-    public class Gender
+    public class Gender : BaseEntity
     {
-        public int Id { get; set; }
         public string GenderName { get; set; }
     }
 }

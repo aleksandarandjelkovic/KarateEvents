@@ -16,9 +16,9 @@ namespace KarateEvents.IoC
 
 
             //Repositories
+            kernel.Bind<IBaseRepository>().To<BaseRepository>();
             kernel.Bind<IClubRepository>().To<ClubRepository>();
             kernel.Bind<ICoachRepository>().To<CoachRepository>();
-
         }
     }
 }

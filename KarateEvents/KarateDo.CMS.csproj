@@ -176,6 +176,7 @@
     </Compile>
     <Compile Include="IoC\NinjectBindings.cs" />
     <Compile Include="IoC\NinjectDependencyResolver.cs" />
+    <Compile Include="Mappers\ClubMappers\ClubViewModelMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\ClubViewModels\AddEditClubViewModel.cs" />
     <Compile Include="ViewModels\ClubViewModels\ClubsListViewModel.cs" />
@@ -336,6 +337,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="Mappers\CoachMappers\" />
+    <Folder Include="Mappers\CompetitorMappers\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

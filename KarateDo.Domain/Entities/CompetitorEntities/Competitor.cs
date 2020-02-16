@@ -2,10 +2,8 @@
 
 namespace KarateDo.Domain.Entities.CompetitorEntities
 {
-    public class Competitor
+    public class Competitor : BaseEntity
     {
-        public int Id { get; set; }
-
         public string Name { get; set; }
 
         public DateTime DateOfBirth { get; set; }

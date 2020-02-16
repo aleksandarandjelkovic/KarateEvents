@@ -12,5 +12,8 @@ namespace KarateDo.Infrastructure.IServices
         void SaveClub(Club club);
 
         void DeleteClub(int clubId);
+
+        void Dispose(bool disposing);
+
     }
 }

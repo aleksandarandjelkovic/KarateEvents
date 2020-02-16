@@ -56,12 +56,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\BaseEntity.cs" />
     <Compile Include="Entities\CategoryEntities\Category.cs" />
     <Compile Include="Entities\ClubEntities\Club.cs" />
     <Compile Include="Entities\CoachEntities\Coach.cs" />
     <Compile Include="Entities\CoachEntities\CoachType.cs" />
     <Compile Include="Entities\CompetitorEntities\Competitor.cs" />
     <Compile Include="Entities\GenderEntities\Gender.cs" />
+    <Compile Include="IEntities\IBaseEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

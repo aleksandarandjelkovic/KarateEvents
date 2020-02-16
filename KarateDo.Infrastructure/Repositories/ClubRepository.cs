@@ -5,50 +5,31 @@ using System.Linq;
 
 namespace KarateDo.Infrastructure.Repositories
 {
-    public class ClubRepository : IClubRepository
+    public class ClubRepository : BaseRepository, IClubRepository
     {
-        public ApplicationDbContext _dbContext;
-
-        public ClubRepository()
+        public ClubRepository(ApplicationDbContext dbContext) : base(dbContext)
         {
-            _dbContext = new ApplicationDbContext();
+            
         }
 
-        public List<Club> GetAllClubs()
+        public List<Club> GetAllClubs(string[] include = null)
         {
-            return _dbContext.Clubs.ToList();
+            return GetAll<Club>(include).ToList();
         }
 
-        public Club GetClubById(int clubId)
+        public Club GetClubById(int clubId, string[] include = null)
         {
-            return _dbContext.Clubs.SingleOrDefault(x => x.Id == clubId);
+            return GetById<Club>(clubId, include);
         }
 
         public void SaveClub(Club club)
         {
-            if (club.Id == 0)
-            {
-                _dbContext.Clubs.Add(club);
-            }
-            else
-            {
-                var clubInDb = _dbContext.Clubs.Single(x => x.Id == club.Id);
-                clubInDb.Name = club.Name;
-                clubInDb.Owner = club.Owner;
-                clubInDb.Phone = club.Phone;
-                clubInDb.Pib = club.Pib;
-                clubInDb.Address = club.Address;
-                clubInDb.City = club.City;
-            }
-
-            _dbContext.SaveChanges();
+            SaveOrUpdate(club);
         }
 
         public void DeleteClub(int clubId)
         {
-            var club = _dbContext.Clubs.Single(x => x.Id == clubId);
-            _dbContext.Clubs.Remove(club);
-            _dbContext.SaveChanges();
+            Delete<Club>(clubId);
         }
     }
 }

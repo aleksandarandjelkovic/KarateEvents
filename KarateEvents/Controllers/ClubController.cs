@@ -1,4 +1,4 @@
-﻿using KarateDo.Infrastructure;
+﻿using KarateDo.CMS.Mappers.ClubMappers;
 using KarateDo.Infrastructure.IServices;
 using KarateEvents.ViewModels.ClubViewModels;
 using System.Web.Mvc;
@@ -7,12 +7,10 @@ namespace KarateEvents.Controllers
 {
     public class ClubController : Controller
     {
-        private ApplicationDbContext _dbContext;
         private readonly IClubService _clubService;
 
         public ClubController(IClubService clubService)
         {
-            _dbContext = new ApplicationDbContext();
             _clubService = clubService;
         }
         
@@ -42,7 +40,9 @@ namespace KarateEvents.Controllers
         {
             if (ModelState.IsValid)
             {
-                //_clubService.SaveClub(club);
+                var mapper = new ClubViewModelMapper();
+                var club = mapper.To(clubViewModel);
+                _clubService.SaveClub(club);
 
                 return RedirectToAction("Index", "Club");
             }
@@ -60,7 +60,8 @@ namespace KarateEvents.Controllers
                 return HttpNotFound();
             }
 
-            var vm = new AddEditClubViewModel();
+            var mapper = new ClubViewModelMapper();
+            var vm = mapper.From(club);
 
             return View("AddEditClub", vm);
         }
@@ -74,7 +75,7 @@ namespace KarateEvents.Controllers
 
         protected override void Dispose(bool disposing)
         {
-            _dbContext.Dispose();
+            _clubService.Dispose(disposing);
         }
     }
 }

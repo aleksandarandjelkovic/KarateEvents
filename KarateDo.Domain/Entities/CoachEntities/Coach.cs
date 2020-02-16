@@ -1,13 +1,9 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace KarateDo.Domain.Entities.CoachEntities
 {
-    public class Coach
+    public class Coach : BaseEntity
     {
-        public int Id { get; set; }
-
         public string Name { get; set; }
 
         public DateTime DateOfBirth { get; set; }

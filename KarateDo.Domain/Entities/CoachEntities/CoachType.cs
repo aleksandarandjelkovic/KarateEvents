@@ -1,8 +1,7 @@
 ﻿namespace KarateDo.Domain.Entities.CoachEntities
 {
-    public class CoachType
+    public class CoachType : BaseEntity
     {
-        public int Id { get; set; }
         public string CoachTypeName { get; set; }
     }
 }

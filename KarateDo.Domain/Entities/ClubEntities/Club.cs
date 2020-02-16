@@ -2,9 +2,8 @@
 
 namespace KarateDo.Domain.Entities.ClubEntities
 {
-    public class Club
+    public class Club : BaseEntity
     {
-        public int Id { get; set; }
         public string Name { get; set; }
 
         public string Owner { get; set; }
