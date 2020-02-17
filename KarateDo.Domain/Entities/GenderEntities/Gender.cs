@@ -2,6 +2,6 @@
 {
     public class Gender : BaseEntity
     {
-        public string GenderName { get; set; }
+        public virtual string GenderName { get; set; }
     }
 }

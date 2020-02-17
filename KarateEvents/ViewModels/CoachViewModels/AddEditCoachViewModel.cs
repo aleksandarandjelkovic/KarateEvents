@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Collections.Generic;
 using System;
 
-namespace KarateEvents.ViewModels.CoachViewModel
+namespace KarateEvents.ViewModels.CoachViewModels
 {
     public class AddEditCoachViewModel
     {

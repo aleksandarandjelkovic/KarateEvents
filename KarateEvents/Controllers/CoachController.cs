@@ -1,7 +1,8 @@
-﻿using KarateDo.Domain.Entities.CoachEntities;
+﻿using KarateDo.CMS.Mappers.CoachMappers;
+using KarateDo.Domain.Entities.CoachEntities;
 using KarateDo.Infrastructure;
 using KarateDo.Infrastructure.IServices;
-using KarateEvents.ViewModels.CoachViewModel;
+using KarateEvents.ViewModels.CoachViewModels;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -17,19 +18,14 @@ namespace KarateEvents.Controllers
             _dbContext = new ApplicationDbContext();
             _coachService = coachService;
         }
-        // GET: Coach
+
         public ActionResult Index()
         {
-            var coaches = _coachService.GetAllCoaches();
-            var coachTypes = _dbContext.CoachTypes.ToList();
-            var clubs = _dbContext.Clubs.ToList();
+            string[] include = new string[] { "CoachType", "Club" };
+            var coaches = _coachService.GetAllCoaches(include);
 
-            var vm = new CoachesListViewModel()
-            {
-                Coaches = coaches,
-                CoachTypes = coachTypes,
-                Clubs = clubs
-            };
+            var mapper = new CoachListViewModelMapper();
+            var vm = mapper.From(coaches);
 
             return View(vm);
         }
@@ -106,7 +102,7 @@ namespace KarateEvents.Controllers
 
         protected override void Dispose(bool disposing)
         {
-            _dbContext.Dispose();
+            _coachService.Dispose(disposing);
         }
     }
 }

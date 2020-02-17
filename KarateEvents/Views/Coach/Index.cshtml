@@ -1,4 +1,4 @@
-﻿@model KarateEvents.ViewModels.CoachViewModel.CoachesListViewModel
+﻿@model KarateEvents.ViewModels.CoachViewModels.CoachesListViewModel
 
 @{
     ViewBag.Title = "Index";
@@ -26,8 +26,8 @@
         {
             <tr>
                 <td>@coach.Name</td>
-                <td>@Model.CoachTypes.Where(x => x.Id == coach.CoachTypeId).Select(x => x.CoachTypeName).FirstOrDefault()</td>
-                <td>@Model.Clubs.Where(x => x.Id == coach.ClubId).Select(x => x.Name).FirstOrDefault()</td>
+                <td>@coach.CoachType</td>
+                <td>@coach.Club</td>
                 <td>@Html.ActionLink("Izmeni trenera", "EditCoach", "Coach", new { coachId = coach.Id }, new { @class = "btn btn-warning" })</td>
                 <td>@Html.ActionLink("Obrisi trenera", "DeleteCoach", "Coach", new { coachId = coach.Id }, new { @class = "btn btn-danger" })</td>
             </tr>

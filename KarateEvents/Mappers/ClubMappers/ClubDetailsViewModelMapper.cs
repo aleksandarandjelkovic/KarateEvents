@@ -5,7 +5,7 @@ using System;
 
 namespace KarateDo.CMS.Mappers.ClubMappers
 {
-    public class ClubViewModelMapper : IMapper<AddEditClubViewModel, Club>
+    public class ClubDetailsViewModelMapper : IMapper<AddEditClubViewModel, Club>
     {
         public AddEditClubViewModel From(Club club)
         {

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace KarateDo.Infrastructure.IRepositories
 {
-    public interface ICoachRepository
+    public interface ICoachRepository : IBaseRepository
     {
-        List<Coach> GetAllCoaches();
+        List<Coach> GetAllCoaches(string[] include = null);
 
-        Coach GetCoachById(int coachId);
+        Coach GetCoachById(int coachId, string[] include = null);
 
         void SaveCoach(Coach coach);
 

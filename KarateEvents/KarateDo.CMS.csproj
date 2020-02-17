@@ -176,12 +176,14 @@
     </Compile>
     <Compile Include="IoC\NinjectBindings.cs" />
     <Compile Include="IoC\NinjectDependencyResolver.cs" />
-    <Compile Include="Mappers\ClubMappers\ClubViewModelMapper.cs" />
+    <Compile Include="Mappers\ClubMappers\ClubDetailsViewModelMapper.cs" />
+    <Compile Include="Mappers\CoachMappers\CoachListViewModelMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\ClubViewModels\AddEditClubViewModel.cs" />
     <Compile Include="ViewModels\ClubViewModels\ClubsListViewModel.cs" />
     <Compile Include="ViewModels\CoachViewModels\AddEditCoachViewModel.cs" />
     <Compile Include="ViewModels\CoachViewModels\CoachesListViewModel.cs" />
+    <Compile Include="ViewModels\CoachViewModels\CoachViewModel.cs" />
     <Compile Include="ViewModels\CompetitorViewModels\AddEditCompetitorViewModel.cs" />
     <Compile Include="ViewModels\CompetitorViewModels\CompetitorsListViewModel.cs" />
   </ItemGroup>
@@ -338,7 +340,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Helpers\" />
-    <Folder Include="Mappers\CoachMappers\" />
     <Folder Include="Mappers\CompetitorMappers\" />
   </ItemGroup>
   <ItemGroup>

@@ -1,21 +1,23 @@
-﻿using System;
+﻿using KarateDo.Domain.Entities.ClubEntities;
+using KarateDo.Domain.Entities.GenderEntities;
+using System;
 
 namespace KarateDo.Domain.Entities.CoachEntities
 {
     public class Coach : BaseEntity
     {
-        public string Name { get; set; }
+        public virtual string Name { get; set; }
 
-        public DateTime DateOfBirth { get; set; }
+        public virtual DateTime DateOfBirth { get; set; }
 
-        public int GenderId { get; set; }
+        public virtual Gender Gender { get; set; }
 
-        public int CoachTypeId { get; set; }
+        public virtual CoachType CoachType { get; set; }
 
-        public int ClubId { get; set; }
+        public virtual Club Club { get; set; }
 
-        public DateTime? DateCreated { get; set; }
+        public virtual DateTime? DateCreated { get; set; }
 
-        public DateTime? DateUpdated { get; set; }
+        public virtual DateTime? DateUpdated { get; set; }
     }
 }

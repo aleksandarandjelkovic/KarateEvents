@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DbContext\ApplicationDbContext.cs" />
+    <Compile Include="Helpers\ValueFormattingHelper.cs" />
     <Compile Include="IMappers\IMapper.cs" />
     <Compile Include="IRepositories\IBaseRepository.cs" />
     <Compile Include="IRepositories\IClubRepository.cs" />
@@ -78,6 +79,14 @@
     <Compile Include="Migrations\202002161151340_CompetitorModelRemovedDataAnnotations.cs" />
     <Compile Include="Migrations\202002161151340_CompetitorModelRemovedDataAnnotations.designer.cs">
       <DependentUpon>202002161151340_CompetitorModelRemovedDataAnnotations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002171012592_changedCoachEntity.cs" />
+    <Compile Include="Migrations\202002171012592_changedCoachEntity.designer.cs">
+      <DependentUpon>202002171012592_changedCoachEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002171016523_addedClubToCoachEntity.cs" />
+    <Compile Include="Migrations\202002171016523_addedClubToCoachEntity.designer.cs">
+      <DependentUpon>202002171016523_addedClubToCoachEntity.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -109,6 +118,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002161151340_CompetitorModelRemovedDataAnnotations.resx">
       <DependentUpon>202002161151340_CompetitorModelRemovedDataAnnotations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002171012592_changedCoachEntity.resx">
+      <DependentUpon>202002171012592_changedCoachEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002171016523_addedClubToCoachEntity.resx">
+      <DependentUpon>202002171016523_addedClubToCoachEntity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

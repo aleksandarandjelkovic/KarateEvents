@@ -40,7 +40,7 @@ namespace KarateEvents.Controllers
         {
             if (ModelState.IsValid)
             {
-                var mapper = new ClubViewModelMapper();
+                var mapper = new ClubDetailsViewModelMapper();
                 var club = mapper.To(clubViewModel);
                 _clubService.SaveClub(club);
 
@@ -60,7 +60,7 @@ namespace KarateEvents.Controllers
                 return HttpNotFound();
             }
 
-            var mapper = new ClubViewModelMapper();
+            var mapper = new ClubDetailsViewModelMapper();
             var vm = mapper.From(club);
 
             return View("AddEditClub", vm);

@@ -34,7 +34,6 @@ namespace KarateDo.Infrastructure.Services
             _clubRepository.DeleteClub(clubId);
         }
 
-
         public void Dispose(bool disposing) 
         {
             _clubRepository.Dispose(disposing);

@@ -2,6 +2,6 @@
 {
     public class CoachType : BaseEntity
     {
-        public string CoachTypeName { get; set; }
+        public virtual string CoachTypeName { get; set; }
     }
 }

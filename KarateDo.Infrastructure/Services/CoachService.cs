@@ -14,9 +14,9 @@ namespace KarateDo.Infrastructure.Services
             _coachRepository = coachRepository;
         }
 
-        public List<Coach> GetAllCoaches()
+        public List<Coach> GetAllCoaches(string[] include = null)
         {
-            return _coachRepository.GetAllCoaches();
+            return _coachRepository.GetAllCoaches(include);
         }
 
         public Coach GetCoachById(int coachId)
@@ -32,6 +32,11 @@ namespace KarateDo.Infrastructure.Services
         public void DeleteCoach(int coachId)
         {
             _coachRepository.DeleteCoach(coachId);
+        }
+
+        public void Dispose(bool disposing)
+        {
+            _coachRepository.Dispose(disposing);
         }
     }
 }

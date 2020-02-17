@@ -2,6 +2,6 @@
 {
     public class Category : BaseEntity
     {
-        public string CategoryName { get; set; }
+        public virtual string CategoryName { get; set; }
     }
 }
